@@ -1,0 +1,304 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+}
+
+.header-bar {
+    height: 6px;
+    background: linear-gradient(90deg, #c0392b, #e74c3c, #c0392b);
+}
+
+.header-content {
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.tagline {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    color: #8899aa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* ── Main ── */
+main {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ── Season Select ── */
+.select-section {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #c0392b;
+}
+
+.select-section label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    color: #1a1a2e;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #c0392b;
+    font-size: 0.8rem;
+}
+
+#year-select {
+    width: 100%;
+    padding: 0.85rem 2.5rem 0.85rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+    border: 2px solid #dde1e7;
+    border-radius: 6px;
+    background: #fafbfc;
+    color: #1a1a2e;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#year-select:hover {
+    border-color: #c0392b;
+}
+
+#year-select:focus {
+    outline: none;
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+#year-select:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+/* ── Teams Section ── */
+.teams-section {
+    margin-top: 1.5rem;
+}
+
+.teams-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.2rem;
+    color: #1a1a2e;
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    color: #8899aa;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+/* ── League Group ── */
+.league-group {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #c0392b;
+}
+
+.league-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* ── Divisions Row ── */
+.divisions-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.division-block {
+    flex: 1;
+    min-width: 180px;
+}
+
+.division-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c0392b;
+    margin-bottom: 0.5rem;
+}
+
+.division-block ul {
+    list-style: none;
+}
+
+.division-block li {
+    padding: 0.5rem 0.75rem;
+    background: #fafbfc;
+    border: 1px solid #dde1e7;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.division-block li:hover {
+    background: #e8f0fe;
+    border-color: #c0392b;
+}
+
+.division-block li.active {
+    background: #c0392b;
+    color: #ffffff;
+    border-color: #c0392b;
+}
+
+/* ── Roster Section ── */
+.roster-section {
+    margin-top: 1.5rem;
+}
+
+.roster-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.2rem;
+    color: #1a1a2e;
+    text-align: center;
+}
+
+.player-card-section {
+    margin-top: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #c0392b;
+}
+
+.player-card-section h2,
+.player-card-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.85rem;
+}
+
+.profile-row {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.batting-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+}
+
+.batting-table th,
+.batting-table td {
+    border: 1px solid #dde1e7;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.batting-table th {
+    background: #f0f2f5;
+    color: #1a1a2e;
+}
+
+.roster-section .roster-list {
+    list-style: none;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #c0392b;
+    columns: 2;
+    column-gap: 2rem;
+}
+
+.roster-list li {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #eef0f3;
+    font-size: 0.95rem;
+    break-inside: avoid;
+}
+
+.roster-list li:last-child {
+    border-bottom: none;
+}
+
+/* ── Footer ── */
+footer {
+    background: #1a1a2e;
+    color: #8899aa;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
